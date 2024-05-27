@@ -1,0 +1,56 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand tracking-in-expand">
+      <img
+        src="/images/handyes.png"
+        alt="Logo"
+        width="30"
+        height="30"
+        class="d-inline-block align-top"
+      />
+      Coleccionalia
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/#about">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/#miembros">Miembros</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/admin">Admin</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/collections">Todas las colecciones</a>
+        </li>
+        <li class="nav-item">
+          <a class="btn btn-primary mx-3 " href="/collectors/login">login</a>
+          <li class="nav-item mx-3">
+            ¿Aún no te has registrado?<a class="nav-link link-style1" href="/collectors/addCollector">Regístrate aquí</a>
+          </li>
+        </li>
+      </ul>
+    </div>
+    <div class="search-container mx-5 p-2">
+      <form action="/search" method="get">
+        <input type="text" id="search-input" name="q" placeholder="Buscar..." />
+        <button type="submit" class="btn btn-primary">Buscar</button>
+      </form>
+    </div>
+  </div>
+</nav>

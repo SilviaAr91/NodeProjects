@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="icon" href="/images/handyes.ico" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <title><%= title %></title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/home.css">
+  </head>
+  <body>
+    <section class="">
+      <%- include('./includes/navbar') %>
+      <img src="/images/wave1.svg" alt="">
+    </section>
+    <section>
+      <h1 class="color-white text-center mb-5">Resultados de la búsqueda</h1>
+      <ul>
+        
+<div class="container-fluid">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 mt-3 g-4">
+          <% results.forEach((result) => { %>
+            <div class="col mb-4">
+              <div class="card">
+                <a href="/images/items/<%= result.img %>" target="_blank">
+                  <img class="card-img-top" src="/images/items/<%= result.img %>" alt="Imagen de objeto de colección" />
+                </a>
+                <div class="card-body">
+                  <h5 class="card-title">Nombre: <%= result.name %></h5>
+                  <h5 class="card-description">Año de adquisición: <%= result.acquisition_date %></h5>
+                  <h5 class="card-description"><%= result.description %></h5>
+                  <a href="/collector/<%= result.collector_id %>">Ver coleccionista</a>
+                </div>
+              </div>
+            </div>
+          <% }) %>
+        </div>
+      </div>
+      </ul>
+      <section class="container-fluid mt-5 background-magenta">
+        <%- include('./includes/footer') %>
+
+    
+       
+      
+      </section>
+
+      <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    </body>
+    </section>
+  </body>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="icon" href="/images/handyes.ico" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <title><%= title %></title>
+   
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/stylesheets/home.css" />
+  </head>
+  <body>
+    <section class="">
+      <%- include('./includes/navbar') %>
+      <img src="/images/wave1.svg" alt="" />
+    </section>
+    <section>
+      <div class="container-fluid">
+        <div class="row color-white p-3">
+          <div class="col-sm-8">
+            <div class="d-flex flex-row">
+            <h1 class="tracking-in-expand"><%= title %></h1>
+            <img class= "img-xs mx-3" src="images/happystar.png" alt="">
+          </div>
+            <p>Welcome to <%= title %></p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum.
+            <div class="text-center">
+              <a
+                class="btn btn-primary mt-5 p-3"
+                href="/collectors/addCollector"
+                >¡Regístrate!</a
+              >
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <img class="img-fluid" src="images/imagemain.png" alt="" />
+          </div>
+        </div>
+      </div>
+      <section class="d-flex justify-content-center text-center mt-5 mb-5">
+        <div>
+          <img class="img-md" src="/images/leaves-left.png" alt="" />
+        </div>
+        <div>
+          <img class="" src="/images/stars.svg" alt="" />
+          <p class="color-white">Rating de nuestros usuarios</p>
+          <span class="color-white"
+            >+ de 100 nuevos cada día
+            <img class="img-fluid img-xs" src="/images/handyes.png" alt="" />
+          </span>
+          <div class="mt-5">
+            <img class="img-xs" src="/images/people1.png" alt="" />
+            <img class="img-xs" src="/images/people2.png" alt="" />
+          </div>
+        </div>
+
+        <div>
+          <img class="img-md" src="/images/leaves-right.png" alt="" />
+        </div>
+      </section>
+
+      <section class="bg-white p-3">
+        <div class="container mt-4">
+          <div class="row">
+            <div class="col-md-4 mb-4">
+              <div class="d-flex align-items-center">
+                <div class="me-3">
+                  <img class="img-xs" src="/images/agreehand.png" />
+                </div>
+                <h4>SELECCIONA</h4>
+              </div>
+            </div>
+            <div class="col-md-4 mb-4">
+              <div class="d-flex align-items-center">
+                <div class="me-3">
+                  <img class="img-xs" src="/images/love.png" />
+                </div>
+                <h4>AÑADE A FAVORITOS</h4>
+              </div>
+            </div>
+            <div class="col-md-4 mb-4">
+              <div class="d-flex align-items-center">
+                <div class="me-3">
+                  <img class="img-xs" src="/images/shipping.png" />
+                </div>
+                <h4>RECIBE TU ENVÍO</h4>
+              </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+              <div class="d-flex align-items-center">
+                <div class="me-3">
+                  <img class="img-xs" src="/images/chill.png" />
+                </div>
+                <h4>INTERACTÚA</h4>
+              </div>
+            </div>
+            <div class="col-md-4 mb-4">
+              <div class="d-flex align-items-center">
+                <div class="me-3">
+                  <img class="img-xs" src="/images/idea.png" />
+                </div>
+                <h4>COMPARTE</h4>
+              </div>
+            </div>
+            <div class="col-md-4 mb-4">
+              <div class="d-flex align-items-center">
+                <div class="me-3">
+                  <img class="img-xs" src="/images/superstar.png" />
+                </div>
+                <h4>GANA SEGUIDORES</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="container-fluid mt-5">
+        <div class="d-flex flex-row justify-content-center">
+        <h1 class="color-white">Nuestros miembros</h1>
+        <img class= "img-xs mx-3" src="images/omg.png" alt="">
+      </div>
+        <div class="row row-cols-1 row-cols-md-4 mt-3 g-4" id="miembros">
+          <% result.forEach((e)=>{ %>
+          <div class="col d-flex justify-content-center">
+            <div class="card">
+              <a href="/images/profiles/<%= e.profile_pic %>" target="_blank">
+                <img
+                  class="card-img-top"
+                  src="/images/profiles/<%= e.profile_pic %>"
+                  alt="Imagen de perfil"
+                />
+              </a>
+              <div class="card-body">
+                <h5 class="card-title">Nombre: <%= e.name %></h5>
+                <p class="card-text">
+                  Colecciona:
+                  <a href="/collector/<%= e.collector_id %>"
+                    ><%= e.main_interest %></a
+                  >
+                </p>
+                <p class="card-text">Correo electrónico: <%= e.email %></p>
+              </div>
+            </div>
+          </div>
+          <% }) %>
+        </div>
+      </section>
+      <section class="mt-5">
+        <img src="images/waveround.svg" alt="">
+      </section>
+      <section>
+        <div class="container-fluid mt-5" id="about">
+          <div class="row color-white p-3">
+            <div class="col-sm-8">
+              <div class="d-flex flex-row">
+              <h1 class="tracking-in-expand">About us</h1>
+              <img class="img-xs mx-3"src="/images/happystar.png" alt="">
+            </div>
+              <p><h4>Conócenos un poco más...</h4></p>
+              <div class="p-3">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Posuere urna nec tincidunt praesent semper feugiat. Sit amet consectetur adipiscing elit ut. Tellus elementum sagittis vitae et leo duis ut. Ornare suspendisse sed nisi lacus sed viverra tellus in. Tortor consequat id porta nibh. Nulla facilisi etiam dignissim diam quis enim lobortis scelerisque. Elit duis tristique sollicitudin nibh sit amet commodo nulla facilisi. Ultrices in iaculis nunc sed augue. Viverra orci sagittis eu volutpat. Morbi tristique senectus et netus. Rhoncus urna neque viverra justo. Sit amet venenatis urna cursus eget nunc. In nulla posuere sollicitudin aliquam ultrices sagittis. Tellus in hac habitasse platea dictumst. Facilisis gravida neque convallis a. Non quam lacus suspendisse faucibus interdum.
+
+              <p class="py-3">Purus sit amet luctus venenatis lectus. Molestie at elementum eu facilisis sed. Vel risus commodo viverra maecenas accumsan lacus vel facilisis. Tristique risus nec feugiat in fermentum posuere. Vitae aliquet nec ullamcorper sit amet risus. Suspendisse faucibus interdum posuere lorem ipsum dolor. Eget magna fermentum iaculis eu non diam. Porttitor eget dolor morbi non arcu. In tellus integer feugiat scelerisque varius. Amet mattis vulputate enim nulla. Sollicitudin ac orci phasellus egestas. Sit amet facilisis magna etiam tempor orci eu lobortis. Adipiscing elit ut aliquam purus sit amet luctus venenatis.</p>
+            </div>
+          </div>
+            <div class="col-sm-4">
+              <img class="img-fluid round-img" src="images/aboutus.jpg" alt="" />
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-5">
+        <img class= "img-l round-img"src="/images/spain.png" alt="">
+      </div>
+      <section class="container-fluid mt-5 background-magenta">
+        <%- include('./includes/footer') %>
+
+    
+       
+      
+      </section>
+
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+
+</html>
